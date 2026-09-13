@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: busbox-pod
+  name: website
   labels:
-    app: busbox
+    app: website
 spec:
   containers:
-    - name: busbox
-      image: traefik:v3.7.13-nanoserver-ltsc2025
+    - name: website
+      image: acrimg.azurecr.io/scheldon:v1
       ports:
         - containerPort: 80
