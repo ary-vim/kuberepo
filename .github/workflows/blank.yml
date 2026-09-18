@@ -1,0 +1,37 @@
+name: Build and Push to ACR
+
+on:
+  push:
+    branches:
+      - main   # Trigger on pushes to main branch
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout source code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Log in to Azure
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          # Store your service principal JSON in GitHub Secrets as AZURE_CREDENTIALS
+
+      # Step 3: Log in to ACR
+      - name: ACR Login
+        run: |
+          az acr login --name acrimg
+
+      # Step 4: Build Docker image
+      - name: Build Docker image
+        run: |
+          docker build -t acrimg.azurecr.io/scheldon:v2 .
+
+      # Step 5: Push Docker image to ACR
+      - name: Push Docker image
+        run: |
+          docker push acrimg.azurecr.io/scheldon:v2
