@@ -7,6 +7,6 @@ metadata:
 spec:
   containers:
     - name: website
-      image: acrimg1.azurecr.io/scheldon:v1
+      image: acrimg1.azurecr.io/scheldon:v6
       ports:
         - containerPort: 80
