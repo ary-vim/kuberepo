@@ -36,4 +36,4 @@ jobs:
       # Step 5: Push Docker image to ACR
       - name: Push Docker image
         run: |
-          docker push acrimg.azurecr.io/scheldon:v2
+          docker push acrimg1.azurecr.io/scheldon:v2
