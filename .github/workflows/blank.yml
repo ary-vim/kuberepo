@@ -14,11 +14,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Azure Login (OIDC)
+      # Step 2: Azure Login (OIDC)
+      - name: Azure Login
         uses: azure/login@v1
         with:
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
@@ -27,15 +24,12 @@ jobs:
 
       # Step 3: Log in to ACR
       - name: ACR Login
-        run: |
-          az acr login --name acrimg
+        run: az acr login --name acrimg
 
       # Step 4: Build Docker image
       - name: Build Docker image
-        run: |
-          docker build -t acrimg.azurecr.io/scheldon:v1 .
+        run: docker build -t acrimg.azurecr.io/scheldon:v1 .
 
       # Step 5: Push Docker image to ACR
       - name: Push Docker image
-        run: |
-          docker push acrimg.azurecr.io/scheldon:v1
+        run: docker push acrimg.azurecr.io/scheldon:v1
