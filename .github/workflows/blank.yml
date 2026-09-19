@@ -31,9 +31,9 @@ jobs:
 
       # Step 4: Build Docker image
       - name: Build Docker image
-        run: docker build -t acrimg1.azurecr.io/scheldon:v2 -f kubernetes/Dockerfile .
+        run: docker build -t acrimg1.azurecr.io/scheldon:v6 -f kubernetes/Dockerfile .
 
       # Step 5: Push Docker image to ACR
       - name: Push Docker image
         run: |
-          docker push acrimg1.azurecr.io/scheldon:v2
+          docker push acrimg1.azurecr.io/scheldon:v6
