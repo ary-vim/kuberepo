@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: website
+  name: mysql
   labels:
-    app: website
+    app: mysql
 spec:
   containers:
-    - name: website
-      image: acrimg1.azurecr.io/scheldon:v7
+    - name: mysql
+      image: mysql:oraclelinux9
       ports:
-        - containerPort: 80
+        - containerPort: 3306
