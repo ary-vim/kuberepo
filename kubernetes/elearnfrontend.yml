@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: mysql
+  name: fronteend
   labels:
-    app: mysql
+    app: fronteend
 spec:
   containers:
-    - name: mysql
+    - name: fronteend
       image: acrimg1.azurecr.io/fronteend:f1
       ports:
         - containerPort: 80
