@@ -6,7 +6,7 @@ metadata:
     app: backend
 spec:
   containers:
-    - name: fronteend
+    - name: backend
       image: acrimg1.azurecr.io/backend:e1
       ports:
         - containerPort: 5001
