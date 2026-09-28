@@ -9,4 +9,4 @@ spec:
     - name: mysql
       image: acrimg1.azurecr.io/fronteend:f1
       ports:
-        - containerPort: 3306
+        - containerPort: 80
