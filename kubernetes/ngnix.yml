@@ -7,6 +7,6 @@ metadata:
 spec:
   containers:
     - name: mysql
-      image: mysql:oraclelinux9
+      image: acrimg1.azurecr.io/mysql:v1
       ports:
         - containerPort: 3306
