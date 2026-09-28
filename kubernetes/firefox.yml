@@ -9,4 +9,4 @@ spec:
     - name: firefox
       image: linuxserver/firefox:1.2404.1
       ports:
-        - containerPort: 80
+        - containerPort: 3001
