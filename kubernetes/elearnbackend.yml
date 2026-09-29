@@ -1,12 +1,18 @@
-apiVersion: v1
-kind: Pod
-metadata:
-  name: backend
-  labels:
-    app: backend
-spec:
-  containers:
-    - name: backend
-      image: acrimg1.azurecr.io/backend:e1
-      ports:
-        - containerPort: 8080
+apiVersion: v1  
+kind: Pod  
+metadata:  
+  name: backend  
+  labels:  
+    app: backend  
+spec:  
+  containers:  
+    - name: backend  
+      image: acrimg1.azurecr.io/backend:e1  
+      ports:  
+        - containerPort: 8080  
+      env:  
+        - name: ConnectionStrings__DefaultConnection  
+          valueFrom:  
+            secretKeyRef:  
+              name: backend-db-secret  
+              key: ConnectionStrings__DefaultConnection  
