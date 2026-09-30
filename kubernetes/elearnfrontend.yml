@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: fronteend
+  name: elarnfront
   labels:
-    app: fronteend
+    app: elarnfront
 spec:
   containers:
-    - name: fronteend
+    - name: elarnfront
       image: acrimg1.azurecr.io/elarnfron:v5
       ports:
         - containerPort: 80
