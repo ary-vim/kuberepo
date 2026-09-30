@@ -7,6 +7,6 @@ metadata:
 spec:
   containers:
     - name: fronteend
-      image: acrimg1.azurecr.io/fronteend:t3
+      image: acrimg1.azurecr.io/fronteend:v5
       ports:
         - containerPort: 80
