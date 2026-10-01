@@ -2,13 +2,13 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: kuberepo-app
-  namespace: argocd   # ArgoCD is usually installed in this namespace
+  namespace: argocd   # Argo CD is usually installed in this namespace
 spec:
   project: default
   source:
     repoURL: https://github.com/Aryansinghaa4/kuberepo.git
     targetRevision: main   # branch name
-    path: kubernetes              # folder in repo containing manifests (adjust if needed)
+    path: kubernetes       # folder in repo containing manifests
   destination:
     server: https://kubernetes.default.svc
     namespace: default     # namespace where app will be deployed
@@ -16,3 +16,5 @@ spec:
     automated:
       prune: true          # remove resources not in Git
       selfHeal: true       # fix drift automatically
+    syncOptions:
+      - CreateNamespace=true
