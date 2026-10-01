@@ -7,6 +7,6 @@ metadata:
 spec:
   containers:
     - name: elarnfront
-      image: acrimg1.azurecr.io/elarnfront1:v7
+      image: acrimg1.azurecr.io/elarnfront1:v8
       ports:
         - containerPort: 80
