@@ -9,7 +9,7 @@ metadata:
 spec: 
   containers: 
     - name: backend 
-      image: acrimg1.azurecr.io/backend:e1 
+      image: acrimg1.azurecr.io/backend:b1 
       ports: 
         - containerPort: 8080 
       env: 
