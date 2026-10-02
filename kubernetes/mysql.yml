@@ -7,6 +7,15 @@ metadata:
 spec:
   containers:
     - name: mysql
-      image: acrimg1.azurecr.io/mysql:v1
+      image: acrimg1.azurecr.io/mysql:v1 if you insist on custom
+      env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: StrongPass123
+        - name: MYSQL_DATABASE
+          value: mydb
+        - name: MYSQL_USER
+          value: myuser
+        - name: MYSQL_PASSWORD
+          value: mypassword
       ports:
         - containerPort: 3306
