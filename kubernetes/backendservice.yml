@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service
+  labels:
+    app: backend
+spec:
+  selector:
+    app: backend   # must match the labels on your backend Deployment/Pod
+  ports:
+    - protocol: TCP
+      port: 8080        # service port (what clients use)
+      targetPort: 8080  # container port inside the Pod
+  type: ClusterIP       # internal-only service (use LoadBalancer if you want external access)
