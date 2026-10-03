@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
     - name: mysql
-      image: acrimg1.azurecr.io/mysql:v2
+      image: acrimg2.azurecr.io/mysql:v2
       env:
         - name: MYSQL_ROOT_PASSWORD
           value: StrongPass123
